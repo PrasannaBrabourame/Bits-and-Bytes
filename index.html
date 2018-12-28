@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Finology - Tech Assessment</title>
+    <title>Tech Assessment</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Nunito:300,400,600,700);
         * {
@@ -287,7 +287,7 @@
                         <h2 class="question">Find the sum of all the primes below 2 million ?</h2>
                         <div class="instruction">
                             <input type="number" name="input-sumofPrimes" value="2000000" class="input-sumofPrimes input_box" />
-                            <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-sumofPrimes').value,'sumOfPrimes')">Sum
+                            <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-sumofPrimes').value,'sumOfPrimes',event)">Sum
                                 of Primes</button>
                         </div>
                         <div class="answer sumOfPrimes"></div>
@@ -303,7 +303,7 @@
                                 most consecutive primes?</h2>
                             <div class="instruction">
                                 <input type="number" name="input-sumofPrimes" value="1000000" class="input-getConsecutiveSum input_box" />
-                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-getConsecutiveSum').value,'sumOfConsecutives')">Sum
+                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-getConsecutiveSum').value,'sumOfConsecutives',event)">Sum
                                     of Consecutive Primes</button>
                             </div>
                             <div class="answer sumOfConsecutives"></div>
@@ -321,10 +321,11 @@
     </div>
     <script>
         var worker = new Worker('./worker.js');
-        function sumOfAllPrimes(value, type) {
-
+        function sumOfAllPrimes(value, type,event) {
+            event.target.closest('li').classList.add('active')
             worker.onmessage = function (e) {
                 document.querySelector(`.${e.data.type}`).innerText = e.data.value
+                event.target.closest('li').classList.remove('active')
             }
             worker.postMessage({ value, type });
         }
