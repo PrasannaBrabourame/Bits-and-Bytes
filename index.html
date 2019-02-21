@@ -8,20 +8,24 @@
     <title>Tech Assessment</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Nunito:300,400,600,700);
+
         * {
             box-sizing: border-box;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale
         }
+
         body {
             padding: 0;
             margin: 0;
             background-color: #2288FF;
             font-family: Nunito, sans-serif
         }
+
         .header {
             height: 80px;
             display: flex;
@@ -36,6 +40,7 @@
             transition: border-left 0.5s ease-out;
             margin-bottom: 20px;
         }
+
         .header .logo {
             font-size: 28px;
             text-decoration: none;
@@ -43,10 +48,12 @@
             font-weight: 700;
             color: #000;
         }
+
         .template {
             max-width: 1118px;
-            margin: 0 auto ;
+            margin: 0 auto;
         }
+
         .modal {
             position: fixed;
             top: 0;
@@ -69,19 +76,22 @@
             overflow-y: auto;
             padding: 20px 40px
         }
+
         .main-section {
             padding: 0px;
         }
+
         .Task_list {
             margin: 0px;
             padding: 0px;
             list-style: none;
         }
+
         .Task_list li {
             margin: 0px;
             padding: 30px 30px 30px 30px;
             background-color: #f1f1f1;
-            box-shadow: 0.5em 0.5em 2.5em rgba(0,0,0,0.5);
+            box-shadow: 0.5em 0.5em 2.5em rgba(0, 0, 0, 0.5);
             user-select: none;
             -ms-user-select: none;
             border: 1px solid #777777;
@@ -92,6 +102,7 @@
             margin-bottom: 20px;
             position: relative;
         }
+
         .Task_list li.active::before {
             position: absolute;
             content: '';
@@ -103,6 +114,7 @@
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+
         .Task_list li:hover {
             border-left: 1em solid #7777FF;
             -webkit-touch-callout: none;
@@ -110,17 +122,18 @@
 
         .Task_list li h2 {
             margin: 0px;
-            padding-bottom: 15px; 
+            padding-bottom: 15px;
             font-size: 20px;
             color: #993333;
         }
- 
+
         .input_box {
             background: #fff;
             padding: 10px 15px;
             color: #383838;
         }
-        .input_btn  {
+
+        .input_btn {
             border: none;
             display: inline-block;
             padding: 12px 16px;
@@ -133,28 +146,35 @@
             cursor: pointer;
             white-space: nowrap;
         }
+
         .sucess {
             color: #FFFFFF;
             background-color: #4CAF50;
         }
+
         .answer:empty {
             display: none;
         }
+
         .answer {
             background: #f1f1f1;
             padding: 12px 10px;
             color: #ab3b18;
             font-weight: 700;
         }
+
         .instruction {
             margin-bottom: 15px;
         }
+
         .index {
             padding: 40px 30px;
         }
+
         .Task_list li:last-child {
             padding-bottom: 0px;
         }
+
         .headerRight div {
             font-size: 18px;
             font-weight: 700;
@@ -162,12 +182,13 @@
 
 
         /* LOADER */
-        
+
 
         /* Progress Bar */
-        .Task_list > li.active .progress {
+        .Task_list>li.active .progress {
             display: block;
         }
+
         .progress {
             display: none;
             position: absolute;
@@ -184,9 +205,11 @@
             margin: 0px;
             border-top-right-radius: 30px;
         }
+
         .progress .indeterminate {
-            background-color: #4caf50; 
+            background-color: #4caf50;
         }
+
         .progress .indeterminate:before {
             content: '';
             position: absolute;
@@ -196,8 +219,9 @@
             bottom: 0;
             will-change: left, right;
             -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-                    animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; 
+            animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
         }
+
         .progress .indeterminate:after {
             content: '';
             position: absolute;
@@ -207,60 +231,80 @@
             bottom: 0;
             will-change: left, right;
             -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-                    animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+            animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
             -webkit-animation-delay: 1.15s;
-                    animation-delay: 1.15s; 
+            animation-delay: 1.15s;
         }
+
         @-webkit-keyframes indeterminate {
             0% {
                 left: -35%;
-                right: 100%; }
+                right: 100%;
+            }
+
             60% {
                 left: 100%;
-                right: -90%; }
+                right: -90%;
+            }
+
             100% {
                 left: 100%;
-                right: -90%; 
-            } 
+                right: -90%;
+            }
         }
+
         @keyframes indeterminate {
             0% {
                 left: -35%;
-                right: 100%; }
+                right: 100%;
+            }
+
             60% {
                 left: 100%;
-                right: -90%; }
+                right: -90%;
+            }
+
             100% {
                 left: 100%;
-                right: -90%; 
-            } 
+                right: -90%;
+            }
         }
+
         @-webkit-keyframes indeterminate-short {
             0% {
                 left: -200%;
-                right: 100%; }
+                right: 100%;
+            }
+
             60% {
                 left: 107%;
-                right: -8%; }
+                right: -8%;
+            }
+
             100% {
                 left: 107%;
-                right: -8%; 
-            } 
+                right: -8%;
+            }
         }
+
         @keyframes indeterminate-short {
             0% {
                 left: -200%;
-                right: 100%; }
+                right: 100%;
+            }
+
             60% {
                 left: 107%;
-                right: -8%; }
+                right: -8%;
+            }
+
             100% {
                 left: 107%;
-                right: -8%; 
-            } 
+                right: -8%;
+            }
         }
-    /* lOADER */
 
+        /* lOADER */
     </style>
 </head>
 
@@ -271,7 +315,7 @@
         <div class="header-section">
             <div class="template">
                 <div class="header">
-                    <span class="logo">Task</span>
+                    <span class="logo">JS Bits and Bytes</span>
                     <div class="headerRight">
                         <div>Prasanna Brabourame</div>
                     </div>
@@ -286,8 +330,10 @@
                     <li>
                         <h2 class="question">Find the sum of all the primes below 2 million ?</h2>
                         <div class="instruction">
-                            <input type="number" name="input-sumofPrimes" value="2000000" class="input-sumofPrimes input_box" />
-                            <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-sumofPrimes').value,'sumOfPrimes',event)">Sum
+                            <input type="number" name="input-sumofPrimes" value="2000000"
+                                class="input-sumofPrimes input_box" />
+                            <button class="input_btn sucess"
+                                onclick="sumOfAllPrimes(document.querySelector('.input-sumofPrimes').value,'sumOfPrimes',event)">Sum
                                 of Primes</button>
                         </div>
                         <div class="answer sumOfPrimes"></div>
@@ -302,8 +348,10 @@
                             <h2 class="question">Which prime, below one million, can be written as the sum of the
                                 most consecutive primes?</h2>
                             <div class="instruction">
-                                <input type="number" name="input-sumofPrimes" value="1000000" class="input-getConsecutiveSum input_box" />
-                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-getConsecutiveSum').value,'sumOfConsecutives',event)">Sum
+                                <input type="number" name="input-sumofPrimes" value="1000000"
+                                    class="input-getConsecutiveSum input_box" />
+                                <button class="input_btn sucess"
+                                    onclick="sumOfAllPrimes(document.querySelector('.input-getConsecutiveSum').value,'sumOfConsecutives',event)">Sum
                                     of Consecutive Primes</button>
                             </div>
                             <div class="answer sumOfConsecutives"></div>
@@ -315,10 +363,12 @@
                     </li>
                     <li>
                         <div class="sub-section">
-                            <h2 class="question">Given a string of parenthesis such as ‘{}()[]’ return true or false if every opening parenthesis matches its closing partner?</h2>
+                            <h2 class="question">Given a string of parenthesis such as ‘{}()[]’ return true or false if
+                                every opening parenthesis matches its closing partner?</h2>
                             <div class="instruction">
-                                <input type="text" name="input-sumofPrimes" class="input-parenthesis input_box" />
-                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-parenthesis').value,'parenthesis',event)">Sum
+                                <input type="text" name="input-parenthesis" class="input-parenthesis input_box" />
+                                <button class="input_btn sucess"
+                                    onclick="sumOfAllPrimes(document.querySelector('.input-parenthesis').value,'parenthesis',event)">Sum
                                     of Consecutive Primes</button>
                             </div>
                             <div class="answer parenthesis"></div>
@@ -332,8 +382,9 @@
                         <div class="sub-section">
                             <h2 class="question">Reverses a given input string</h2>
                             <div class="instruction">
-                                <input type="text" name="input-sumofPrimes" class="input-reverseString input_box" />
-                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-reverseString').value,'reverseString',event)">Sum
+                                <input type="text" name="input-reverseString" class="input-reverseString input_box" />
+                                <button class="input_btn sucess"
+                                    onclick="sumOfAllPrimes(document.querySelector('.input-reverseString').value,'reverseString',event)">Sum
                                     of Consecutive Primes</button>
                             </div>
                             <div class="answer reverseString"></div>
@@ -345,20 +396,41 @@
                     </li>
                     <li>
                         <div class="sub-section">
-                            <h2 class="question">Find the perfect squares (see Further Notice) between the lower bound and the upper bound given below?</h2>
+                            <h2 class="question">Find the perfect squares (see Further Notice) between the lower bound
+                                and the upper bound given below?</h2>
                             <div class="instruction">
-                                <input type="number" name="input-sumofPrimes" class="input-reverseString input_box" />
-                                <button class="input_btn sucess" onclick="sumOfAllPrimes(document.querySelector('.input-reverseString').value,'reverseString',event)">Sum
+                                <input type="number" name="input-perfectSquares"
+                                    class="input-perfectSquares1 input_box" />
+                                <input type="number" name="input-perfectSquares"
+                                    class="input-perfectSquares2 input_box" />
+                                <button class="input_btn sucess"
+                                    onclick="sumOfAllPrimes([`${document.querySelector('.input-perfectSquares1').value}`,`${document.querySelector('.input-perfectSquares2').value}`],'perfectSquares',event)">Sum
                                     of Consecutive Primes</button>
                             </div>
-                            <div class="answer reverseString"></div>
+                            <div class="answer perfectSquares"></div>
                         </div>
 
                         <div class="progress">
                             <div class="indeterminate"></div>
                         </div>
                     </li>
-                    
+                    <li>
+                        <div class="sub-section">
+                            <h2 class="question">Transforms a string from camelCase to * kebab-case. This function must not break abreviations.</h2>
+                            <div class="instruction">
+                                <input type="text" name="input-camelCase"
+                                    class="input-camelCase input_box" />
+                                <button class="input_btn sucess"
+                                    onclick="sumOfAllPrimes(document.querySelector('.input-camelCase').value,'camelCase',event)">Sum
+                                    of Consecutive Primes</button>
+                            </div>
+                            <div class="answer camelCase"></div>
+                        </div>
+
+                        <div class="progress">
+                            <div class="indeterminate"></div>
+                        </div>
+                    </li>
                 </ul>
 
 
@@ -367,7 +439,7 @@
     </div>
     <script>
         var worker = new Worker('./worker.js');
-        function sumOfAllPrimes(value, type,event) {
+        function sumOfAllPrimes(value, type, event) {
             event.target.closest('li').classList.add('active')
             worker.onmessage = function (e) {
                 document.querySelector(`.${e.data.type}`).innerText = e.data.value
@@ -377,9 +449,9 @@
         }
 
 
-        
 
-        
+
+
     </script>
 </body>
 
