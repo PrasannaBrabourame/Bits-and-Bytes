@@ -11,7 +11,7 @@ self.onmessage = function (e) {
                 }
             }
         }
-        return {primes,notPrime}
+        return { primes, notPrime }
     }
     if (e.data.type === "sumOfPrimes") {
         const max = primeArry(Number(e.data.value));
@@ -36,5 +36,36 @@ self.onmessage = function (e) {
         }
 
         self.postMessage({ value: maxSum, type: e.data.type })
+    } else if (e.data.type === "parenthesis") {
+        const str = e.data.value;
+        const bracketsMap = new Map();
+        bracketsMap.set(']', '[');
+        bracketsMap.set('}', '{');
+        bracketsMap.set(')', '(');
+
+        const closingBrackets = [...bracketsMap.keys()];
+        const openingBrackets = [...bracketsMap.values()];
+
+        var result = [];
+        var strLen = str.length;
+        for (i = 0; i < strLen; i++) {
+            ch = str[i];
+            if (openingBrackets.indexOf(ch) > -1) {
+                result.push(ch);
+            } else if (closingBrackets.indexOf(ch) > -1) {
+                var expectedBracket = bracketsMap.get(ch);
+                if (result.length === 0 || (result.pop() !== expectedBracket)) {
+                    self.postMessage({ value: "Invalid", type: e.data.type })
+                }
+            } else {
+                continue;
+            }
+        }
+        self.postMessage({ value: (result === 0), type: e.data.type })
+
+    } else if(e.data.type === "reverseString"){
+        const str = e.data.value;
+        self.postMessage({ value: str.split('').reverse().join(''), type: e.data.type })
     }
+
 };
