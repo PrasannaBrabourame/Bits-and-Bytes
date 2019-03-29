@@ -128,6 +128,7 @@ self.onmessage = function (e) {
         }
         self.postMessage({ value: result, type: e.data.type })
     }else if(e.data.type ==="currencyFormat"){
+        let x = e.data.value;
         let result = x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3);
         self.postMessage({ value: result, type: e.data.type })
     }
